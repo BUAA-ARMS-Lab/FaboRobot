@@ -1,4 +1,7 @@
 #include <iostream>
+#include "basic_elements/point.h"
+#include "basic_elements/make_singleton.h"
+#include "auto_ptr.h"
 
 class FaboRobot {
     class CollisionBox; // 机器人本体碰撞盒
@@ -28,6 +31,8 @@ class FaboRobot {
      */
 
   public:
+
+
 };
 
 class Atlas {
@@ -42,3 +47,72 @@ class Atlas {
     class ObjectMap;
 
 };
+
+class Map {
+    //
+
+    bool isOccupied(const Pointd<3>& point); // is occupied state check
+};
+
+// common basic definition of robot
+struct Robot {
+    // basic information of motion
+    struct BaseMotion {
+        Pointd<3> position_;
+        Pointd<3> velocity_;
+        Pointd<3> orientation_;
+        Pointd<3> cmd_vel_; // v_x, v_y, v_theta
+    };
+
+    Pointds<2> footprint;  // polygon for collision check
+    BaseMotion motion_states_;
+    Path  path_;
+};
+
+// inherit Robot to create specific robot
+
+typedef std::vector<Pointd<3> > Path;
+typedef std::shared_ptr<Robot> RobotPtr;
+
+// implement robot with specific requirement, for example
+//struct Robot1 : public Robot {
+//    //
+//};
+//
+//struct Robot2 : public Robot {
+//    //
+//};
+//
+//struct Robot3 : public Robot {
+//    //
+//};
+
+struct RobotsAndMap {
+
+    std::vector<Robot> robots_;
+
+    Map map_;
+
+    MAKE_SINALETON(RobotsAndMap)
+
+};
+
+// running state of mission, such as navigation
+enum MissionState {
+    RUNNING = 0,
+    SUCCESS,
+    EXCEPTION
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
