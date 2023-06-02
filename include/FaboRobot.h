@@ -18,22 +18,7 @@ class Microphone;
 
 class Controller;
 
-class GridMap_2D;
-class OctoMap_3D;
-class PointMap;
-class RoomTopologyMap;
-class ObjectMap;
-
-template <typename MapType>
-class Atlas {
-  public:
-    Atlas() {}
-
-    MapType *mpCurrentMap;
-    vector<MapType> mpMaps;
-}
-
-// 小胖机器人类，存储
+// 小胖机器人类，存储机器人本体状态和管理硬件设备
 class FaboRobot {
   public:
     // 获取单实例
@@ -64,15 +49,6 @@ class FaboRobot {
     // 机器人的控制指令下发（控制机器人头部、底盘与机械臂的运动）和传感信息获取（雷达、相机、IMU、麦克风）的管理器
     // 唯一占用蓝牙通道, 所有与硬件的通信都只通过该类的唯一实例进行
     Controller* mpController;
-
-    // Atlas为多地图管理器，针对每种地图，都可能出现跟踪丢失的情况
-    // 由Atlas管理该类地图的活跃地图和非活跃地图，并在重定位/检测回环时进行地图合并
-    Atlas<GridMap_2D>* mpaGridMap_2D;           // 二维地图，占据概率格式，同样包括局部和全局地图，可以用于满足 基本导航 需求
-    Atlas<OctoMap_3D>* mpaOctoMap_3D;           // 3D占据地图, 可以用于满足 高阶导航 和 物体交互 任务
-    Atlas<PointMap>* mpaSparsePointMap;         // 稀疏点云地图
-    Atlas<PointMap>* mpaDensePointMap;          // 稠密点云地图
-    Atlas<RoomTopologyMap>* mpaRoomTopologyMap; // 房间拓扑地图
-    Atlas<ObjectMap>* mpaObjectMap;             // 物体地图
 };
 
 class NBV; // 最佳观测点
