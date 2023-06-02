@@ -10,6 +10,8 @@ class FaboRobot {
     class Lidar;
     class Camera; // 机器人的相机，用于获取RGB图像/Depth图像，以及可能包含IMU信息
     class Microphone;
+    
+    class NBV;        //最佳观测点
 
     /**
      * 所有与硬件的通信都只通过这一个类的唯一实例进行
@@ -39,10 +41,12 @@ class FaboRobot {
 
 class Atlas {
     class GridMap_2D {
-      public:
-        bool init = false;
+      bool init = false;
     };
-    class OctoMap_3D;
+
+    class OctoMap_3D{
+      bool 
+    };
     class DensePointMap;
     class SparsePointMap;
     class RoomTopologyMap;
