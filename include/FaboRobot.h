@@ -30,6 +30,13 @@ class FaboRobot {
   public:
 };
 
+/**
+ * Point:  
+ * Plane: 
+ * Line: 
+ * Object:
+*/
+
 class Atlas {
     class GridMap_2D {
       public:
@@ -40,5 +47,4 @@ class Atlas {
     class SparsePointMap;
     class RoomTopologyMap;
     class ObjectMap;
-
 };
