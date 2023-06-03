@@ -3,6 +3,7 @@
 #define SYSTEM_H
 
 #include <iostream>
+#include <Robot.h>
 
 namespace Fabo
 {

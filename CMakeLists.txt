@@ -1,5 +1,5 @@
-cmake_minimum_required( VERSION 3.18 )
-project( faborobot )
+cmake_minimum_required( VERSION 3.2 )
+project( FaboRobot )
 
 include_directories(
     include
@@ -8,4 +8,8 @@ include_directories(
 
 add_library(${PROJECT_NAME} SHARED
     src/Robot.cc
+)
+
+target_link_libraries(
+
 )
