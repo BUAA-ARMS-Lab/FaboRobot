@@ -38,8 +38,7 @@ class NBVGenerator{  //用于生成NBV
 
 };  
 
-class ActiveExplore{
+class ActiveExploring{
 
-    
     
 };

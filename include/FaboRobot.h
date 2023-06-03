@@ -4,8 +4,8 @@
 #include "basic_elements/point.h"
 #include <iostream>
 #include <vector>
-// #include "basic_elements/make_singleton.h"
-// #include "auto_ptr.h"
+#include "basic_elements/make_singleton.h"
+#include "auto_ptr.h"
 
 class CollisionBox;
 class Head;
