@@ -49,7 +49,6 @@ public:
     ActiveExploring(){};
     ~ActiveExploring(){};
 
-    
 private:
     FaboRobot* mpRobot;
     MapManager* mpMapManager;
