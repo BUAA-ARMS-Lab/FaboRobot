@@ -1,5 +1,8 @@
-#include <FaboRobot.h>
+#ifndef ACTIVE_EXPLORING_H
+#define ACTIVE_EXPLORING_H
 
+#include <FaboRobot.h>
+#include <MapManager.h>
 
 // NBV
 class GlobalNBV{
@@ -36,9 +39,21 @@ class NBVGenerator{  //用于生成NBV
 
     NBV GenerateNBV(ObjectMap* obs, SparsePointMap* points, RoomTopologyMap* rooms);
 
-};  
+};
+
+class FaboRobot;
+class MapManager;
 
 class ActiveExploring{
+public:
+    ActiveExploring(){};
+    ~ActiveExploring(){};
 
     
+private:
+    FaboRobot* mpRobot;
+    MapManager* mpMapManager;
 };
+
+
+#endif ACTIVE_EXPLORING_H
