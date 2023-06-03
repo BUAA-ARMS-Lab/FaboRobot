@@ -2,15 +2,14 @@
 #ifndef SLAMMING_H
 #define SLAMMING_H
 
-#include "FaboRobot.h"
 #include "MapManager.h"
+#include "Robot.h"
 
-class FaboRobot;
+class Robot;
 class MapManager;
 
-class Slamming
-{
-public:
+class Slamming {
+  public:
     Slamming(){};
     ~Slamming(){};
 
@@ -18,10 +17,9 @@ public:
     void LaunchGridSlamming(){};
     void OptimizeObjectParams(){};
 
-private:
-    FaboRobot* mpRobot;
-    MapManager* mpMapManager;
-
+  private:
+    Robot *mpRobot;
+    MapManager *mpMapManager;
 };
 
 #endif // SLAMMING_H

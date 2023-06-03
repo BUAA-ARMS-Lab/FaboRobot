@@ -2,15 +2,14 @@
 #ifndef GRIPPING_H
 #define GRIPPING_H
 
-#include "FaboRobot.h"
 #include "MapManager.h"
+#include "Robot.h"
 
-class FaboRobot;
+class Robot;
 class MapManager;
 
-class Gripping
-{
-public:
+class Gripping {
+  public:
     Gripping(){};
     ~Gripping(){};
 
@@ -18,10 +17,10 @@ public:
     void GenerateArmPath(){};
     void LaunchGripping(){};
     void LaunchArmMoving(){};
-private:
-    FaboRobot* mpRobot;
-    MapManager* mpMapManager;
 
+  private:
+    Robot *mpRobot;
+    MapManager *mpMapManager;
 };
 
 #endif // GRIPPING_H

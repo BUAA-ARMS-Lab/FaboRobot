@@ -4,6 +4,9 @@
 
 #include <iostream>
 
+namespace Fabo
+{
+
 class GridMap_2D;
 class OctoMap_3D;
 class PointMap;
@@ -31,5 +34,7 @@ class MapManager
     Atlas<RoomTopologyMap>* mpaRoomTopologyMap; // 房间拓扑地图
     Atlas<ObjectMap>* mpaObjectMap;             // 物体地图
 };
+
+}  // namespace Fabo
 
 #endif // MAPMANAGER_H

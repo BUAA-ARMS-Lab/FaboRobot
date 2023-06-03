@@ -7,5 +7,5 @@ include_directories(
 )
 
 add_library(${PROJECT_NAME} SHARED
-    src/FaboRobot.cc
+    src/Robot.cc
 )

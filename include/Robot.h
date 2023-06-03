@@ -1,11 +1,14 @@
-#ifndef FABOROBOT_H
-#define FABOROBOT_H
+#ifndef Robot_H
+#define Robot_H
 
 #include "basic_elements/point.h"
 #include <iostream>
 #include <vector>
 #include "basic_elements/make_singleton.h"
 #include "auto_ptr.h"
+
+namespace Fabo
+{
 
 class CollisionBox;
 class Head;
@@ -19,22 +22,22 @@ class Microphone;
 class Controller;
 
 // 小胖机器人类，存储机器人本体状态和管理硬件设备
-class FaboRobot {
+class Robot {
   public:
     // 获取单实例
-    static FaboRobot *GetInstance();
+    static Robot *GetInstance();
 
     // 释放单实例
     static void DeleteInstance();
 
   private:
     // 将构造和析构函数定义为私有，禁止外部构造和析构
-    FabaRobot();
-    ~FaboRobot();
+    Robot(){};
+    ~Robot(){};
 
   private:
     // 唯一单实例对象指针
-    static FaboRobot *mpFaboRobot;
+    static Robot *mpRobot;
 
   public:
     CollisionBox* mpCbox;       // 机器人本体碰撞盒
@@ -50,6 +53,10 @@ class FaboRobot {
     // 唯一占用蓝牙通道, 所有与硬件的通信都只通过该类的唯一实例进行
     Controller* mpController;
 };
+
+}  // namespace Fabo
+
+
 
 class NBV; // 最佳观测点
 
@@ -104,4 +111,4 @@ enum MissionState {
     EXCEPTION
 };
 
-#endif // FABOROBOT_H
+#endif // Robot_H

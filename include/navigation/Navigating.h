@@ -2,23 +2,23 @@
 #ifndef NAVIGATING_H
 #define NAVIGATING_H
 
-#include "FaboRobot.h"
 #include "MapManager.h"
+#include "Robot.h"
 
-class FaboRobot;
+class Robot;
 class MapManager;
 
-class Navigating
-{
-public:
+class Navigating {
+  public:
     Navigating(){};
     ~Navigating(){};
 
     // 导航到目标点
     void NavigateTarget(){};
-private:
-    FaboRobot* mpRobot;
-    MapManager* mpMapManager;
+
+  private:
+    Robot *mpRobot;
+    MapManager *mpMapManager;
 };
 
-#endif  // NAVIGATING_H
+#endif // NAVIGATING_H
